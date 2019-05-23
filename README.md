@@ -49,7 +49,9 @@ Pinout of Raspberry Pi :
 Once done, run zmqpicam.py and see if it displays GPS data or FPS. If GPS isn't receiving any signal, the program uses the default 
 values given in line 134 and 135. If GPS receives any signal, it will print the latitude and longitude.
 
-**Test each module separately before running the zmqpicam.py. I have included the test files (<module>test.py). Also run gpsRun.sh everytime you restart pi**
+**Test each module separately before running the zmqpicam.py**
+
+**I have included the test files ([module-name]test.py). Also run gpsRun.sh everytime you restart pi**
 
 Once the raspberry pi side is done, now it is time for the actual test !
 
