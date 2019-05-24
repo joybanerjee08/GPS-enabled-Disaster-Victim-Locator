@@ -3,9 +3,36 @@ A project that involves a Raspberry Pi based GPS Camera, which also takes magnet
 
 First step : Go to config, and run download_weights.sh
 
-Then put the zmqpicam.py in your raspberry pi.
+## **Raspberry Pi GPS Camera**
 
-**Change line 35 in Pi to the address of your computer where YOLO will be running**
+Hook up the GPS Module following this :
+```
+2->GPS VCC
+6->GPS GND
+8->GPS RX
+10->GPS TX
+```
+
+Put the gpspicam.py in your raspberry pi.
+
+NEO 7M is my GPS module, and I have followed this for setting it up :  https://medium.com/@DefCon_007/using-a-gps-module-neo-7m-with-raspberry-pi-3-45100bc0bb41
+
+Then get this python library : https://github.com/wadda/gps3
+
+Once done, if you get an output in gpsmon, then run ```gpsRun.sh```, after that run ```gpstest.py``` to see if you can get latitude and longitude.
+
+If you get the output, then you are ready :D
+
+**change line 35 in gpspicam.py to the local address of your computer where YOLO will be running**
+
+Run ipYOLO.py in your computer, then run gpspicam.py in your raspberry pi.
+
+
+## **Raspberry Pi GPS Camera with Barometer and Magnetometer**
+
+Barometer and Magnetometer are used to get altitude and direction, so it will help you get accurate location of a detected object in the image, but I have not used any algorithm for that, I have just taken the reading and stored it.
+
+Put the zmqpicam.py in your raspberry pi.
 
 Then follow this link : https://www.instructables.com/id/Raspberry-PI-Multiple-I2c-Devices/
 
@@ -55,8 +82,12 @@ values given in line 134 and 135. If GPS receives any signal, it will print the 
 
 Once the raspberry pi side is done, now it is time for the actual test !
 
+**change line 35 in zmqpicam.py to the local address of your computer where YOLO will be running**
+
 Run ipYOLO.py on your computer, then run zmqpicam.py on the Raspberry pi. If you see values being printed on your computer, then voila ! 
 your project is successfully running ! :D
+
+## **Rest of the details**
 
 You can exit the ipYOLO.py by pressing 'q'. 
 
