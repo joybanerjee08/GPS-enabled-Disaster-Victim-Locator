@@ -95,6 +95,10 @@ To visualize the detections, run sql2map.ipynb, change the label to whatever lab
 
 Use this to view your sqlite table :  https://sqlitebrowser.org/
 
+This is the view of the table : 
+
+![](table.png)
+
 I got this output on the map : 
 
 ![](map.png)
